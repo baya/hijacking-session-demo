@@ -1,0 +1,6 @@
+<% if current_user %>
+<h2>Welcome: <%=current_user.login%> </h2>
+<%= link_to 'Logout', logout_url, method: 'delete'%>
+<% else %>
+<%=link_to 'Please Login', login_url %>
+<% end %>

@@ -1,0 +1,20 @@
+<h2>Signup</h2>
+<%= form_tag signup_url do -%>
+  <div class="form-group">
+    <label for='login'>Login:</label>
+    <%= text_field_tag 'user[login]', nil -%>
+  </div>
+  <div class="form-group">
+    <label for='password'>Passowrd:</label>
+    <%= password_field_tag 'user[password]', nil -%>
+  </div>
+  <div class="form-group">
+    <label for='password'>Passowrd Confirmation:</label>
+    <%= password_field_tag 'user[password_confirmation]', nil -%>
+  </div>
+  <%= submit_tag 'Submit', class: 'btn btn-default' %>
+<% end %>
+
+<div class='link-reg'>
+  <%= link_to 'Login', login_url %>
+</div>
