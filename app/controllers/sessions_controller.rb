@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(login: params[:login])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      cookies.signed[:secure_user_id] = "secure#{user.id}"
       redirect_to root_url
     else
       flash[:notice] = 'Login Failed'
